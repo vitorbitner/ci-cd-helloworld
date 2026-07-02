@@ -1,3 +1,6 @@
+using System.Reflection;
+using System.Runtime.InteropServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,7 +24,24 @@ var summaries = new[]
 
 app.MapGet("/", () =>
 {
-	return "Hello from Azure!";
+	string? informationalVersion = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+    string? currentVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+	FileInfo assemblyFile = new FileInfo(Assembly.GetExecutingAssembly().Location);
+	DateTime buildDate = assemblyFile.LastWriteTimeUtc;
+	string framework = RuntimeInformation.FrameworkDescription;
+	string osDescription = RuntimeInformation.OSDescription
+	string architecture = RuntimeInformation.ProcessArchitecture.ToString();
+
+	return $"Hello from Azure! Build Version: ${currentVersion}, \r\n" +
+    $" infos: ${informationalVersion},\r\n" +
+    $" build date: ${buildDate},\r\n" +
+    $" assembly: ${assemblyFile.FullName}\r\n" +
+    $" framework: ${framework}\r\n" +
+    $" os: ${osDescription}\r\n" +
+    $" architecture: ${architecture}\r\n" +
+	$"${} \r\n";
+
+
 });
 
 app.MapGet("/weatherforecast", () =>

@@ -31,3 +31,5 @@ C:\Src\101\CICD\HeloWord\HelloApi\obj\Debug\net10.0\refint\HelloApi.dll
 C:\Src\101\CICD\HeloWord\HelloApi\obj\Debug\net10.0\HelloApi.pdb
 C:\Src\101\CICD\HeloWord\HelloApi\obj\Debug\net10.0\HelloApi.genruntimeconfig.cache
 C:\Src\101\CICD\HeloWord\HelloApi\obj\Debug\net10.0\ref\HelloApi.dll
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Debug\net10.0\HelloApi.sourcelink.json
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

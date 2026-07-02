@@ -1,0 +1,9 @@
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\HelloApi.exe
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\appsettings.Development.json
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\appsettings.json
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\HelloApi.dll
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\HelloApi.deps.json
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\HelloApi.runtimeconfig.json
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\HelloApi.pdb
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\Microsoft.AspNetCore.OpenApi.dll
+C:\Src\101\CICD\HeloWord\HelloApi\obj\Release\net10.0\PubTmp\Out\Microsoft.OpenApi.dll
