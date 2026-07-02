@@ -29,7 +29,7 @@ app.MapGet("/", () =>
 	FileInfo assemblyFile = new FileInfo(Assembly.GetExecutingAssembly().Location);
 	DateTime buildDate = assemblyFile.LastWriteTimeUtc;
 	string framework = RuntimeInformation.FrameworkDescription;
-	string osDescription = RuntimeInformation.OSDescription
+    string osDescription = RuntimeInformation.OSDescription;
 	string architecture = RuntimeInformation.ProcessArchitecture.ToString();
 
 	return $"Hello from Azure! Build Version: ${currentVersion}, \r\n" +
