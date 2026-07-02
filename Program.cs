@@ -39,8 +39,7 @@ app.MapGet("/", () =>
     $" framework: ${framework}\r\n" +
     $" os: ${osDescription}\r\n" +
     $" architecture: ${architecture}\r\n" +
-	$"${} \r\n";
-
+	$"${} \r\n";   
 
 });
 
