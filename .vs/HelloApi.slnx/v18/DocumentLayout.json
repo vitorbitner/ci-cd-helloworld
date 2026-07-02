@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{7B6808DF-BB6D-E5BF-C5C3-2C648D85C4C3}|HelloApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7B6808DF-BB6D-E5BF-C5C3-2C648D85C4C3}|HelloApi.csproj|c:\\src\\101\\cicd\\heloword\\helloapi\\workflows\\deploy.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{7B6808DF-BB6D-E5BF-C5C3-2C648D85C4C3}|HelloApi.csproj|solutionrelative:workflows\\deploy.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7B6808DF-BB6D-E5BF-C5C3-2C648D85C4C3}|HelloApi.csproj|c:\\src\\101\\cicd\\heloword\\helloapi\\helloapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{7B6808DF-BB6D-E5BF-C5C3-2C648D85C4C3}|HelloApi.csproj|solutionrelative:helloapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "deploy.yml",
+              "DocumentMoniker": "C:\\Src\\101\\CICD\\HeloWord\\HelloApi\\workflows\\deploy.yml",
+              "RelativeDocumentMoniker": "workflows\\deploy.yml",
+              "ToolTip": "C:\\Src\\101\\CICD\\HeloWord\\HelloApi\\workflows\\deploy.yml",
+              "RelativeToolTip": "workflows\\deploy.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-07-02T21:14:21.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "HelloApi.http",
               "DocumentMoniker": "C:\\Src\\101\\CICD\\HeloWord\\HelloApi\\HelloApi.http",
               "RelativeDocumentMoniker": "HelloApi.http",
@@ -41,7 +58,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Src\\101\\CICD\\HeloWord\\HelloApi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwCEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-02T17:56:14.025Z",
               "EditorCaption": ""
