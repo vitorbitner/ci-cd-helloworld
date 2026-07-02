@@ -50,9 +50,7 @@ jobs:
         with:
           name: helloapi
           path: ./publish
-
-jobs:
-
+          
   deploy:
 
     needs: build
