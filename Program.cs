@@ -53,7 +53,7 @@ app.MapGet("/info", () =>
 	return Results.Ok(new
 	{
 		Application = "Hello API",
-		Version = "1.0.0",
+		Version = "2.0.0",
 		Environment = app.Environment.EnvironmentName,
 		Machine = Environment.MachineName,
 		Time = DateTime.UtcNow
