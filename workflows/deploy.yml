@@ -27,7 +27,7 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore -p:Version=1.2.3.4
 
     - name: Publish
       run: dotnet publish -c Release -o ./publish

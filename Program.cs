@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
@@ -42,6 +43,21 @@ app.MapGet("/", () =>
     $" architecture: {architecture}\r\n" +
 	$" Env: {app.Environment}\r\n";
 
+});
+
+
+app.MapHealthChecks("/health");
+
+app.MapGet("/info", () =>
+{
+	return Results.Ok(new
+	{
+		Application = "Hello API",
+		Version = "1.0.0",
+		Environment = app.Environment.EnvironmentName,
+		Machine = Environment.MachineName,
+		Time = DateTime.UtcNow
+	});
 });
 
 app.MapGet("/weatherforecast", () =>

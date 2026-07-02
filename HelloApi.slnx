@@ -3,4 +3,5 @@
     <File Path=".gitignore" />
   </Folder>
   <Project Path="HelloApi.csproj" />
+  <Project Path="HelloApi.Tests/HelloApi.Tests.csproj" />
 </Solution>
