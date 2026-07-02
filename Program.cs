@@ -33,13 +33,13 @@ app.MapGet("/", () =>
 	string architecture = RuntimeInformation.ProcessArchitecture.ToString();
 
 	return $"Hello from Azure! Build Version: ${currentVersion}, \r\n" +
-    $" infos: ${informationalVersion},\r\n" +
-    $" build date: ${buildDate},\r\n" +
-    $" assembly: ${assemblyFile.FullName}\r\n" +
-    $" framework: ${framework}\r\n" +
-    $" os: ${osDescription}\r\n" +
-    $" architecture: ${architecture}\r\n" +
-	$"\r\n";
+    $" infos: {informationalVersion},\r\n" +
+    $" build date: {buildDate},\r\n" +
+    $" assembly: {assemblyFile.FullName}\r\n" +
+    $" framework: {framework}\r\n" +
+    $" os: {osDescription}\r\n" +
+    $" architecture: {architecture}\r\n" +
+	$" Env: {app.Environment}\r\n";
 
 });
 
