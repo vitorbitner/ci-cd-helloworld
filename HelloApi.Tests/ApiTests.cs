@@ -5,7 +5,7 @@ namespace HelloApi.Tests;
 public class ApiTests
 {
 	[Fact]
-	public void ShouldReturnTrue()
+	public void ShouldReturnTrues()
 	{
 		Assert.True(true);
 	}

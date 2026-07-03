@@ -33,7 +33,7 @@ app.MapGet("/", () =>
     string osDescription = RuntimeInformation.OSDescription;
 	string architecture = RuntimeInformation.ProcessArchitecture.ToString();
 
-	return $"Hello from Azure! \r\n" +
+	return $"Hello from Azure! \r\n"  +
     $" Build Version: ${currentVersion}, \r\n" +
     $" infos: {informationalVersion},\r\n" +
     $" build date: {buildDate},\r\n" +
