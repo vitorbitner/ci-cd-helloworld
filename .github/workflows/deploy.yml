@@ -40,7 +40,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test helloapi.tests --configuration Release --no-build
+        run: dotnet test --configuration Release --no-build
 
       - name: Publish
         run: dotnet publish -c Release -o ./publish
