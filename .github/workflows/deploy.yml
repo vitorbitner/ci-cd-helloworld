@@ -40,7 +40,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Test        
-        working-directory: /HelloApi.Tests
+        working-directory: ${{ github.workspace }}/HelloApi.Tests
         run: dotnet test --configuration Release --no-build
 
       - name: Publish
