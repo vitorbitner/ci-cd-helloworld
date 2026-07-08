@@ -66,6 +66,7 @@ app.MapGet("/info", () =>
 		Version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+')[0] ?? "unknown",
 		Commit = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+').LastOrDefault() ?? "unknown",
 		Branch = assembly.GetCustomAttribute<AssemblyMetadataAttribute>()?.Value ?? "unknown", // Fallback or hardcoded if local
+		Description = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? "",
 		BuildDate = description.StartsWith("BuildDate=") ? description.Split('=')[1] : "Unknown"
 	});
 });
