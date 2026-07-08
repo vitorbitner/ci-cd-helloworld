@@ -43,8 +43,7 @@ jobs:
           # Extract short SHA (7 characters)
           COMMIT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
           BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          
-          cat <<EOF > ./appsettings.Info.json
+                    
           dotnet build --configuration Release --no-restore \
             -p:Version="1.0.${{ github.run_number }}" \
             -p:SourceRevisionId="$COMMIT_SHA" \
