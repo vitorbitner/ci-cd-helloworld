@@ -50,13 +50,23 @@ app.MapHealthChecks("/health");
 
 app.MapGet("/info", () =>
 {
+	var assembly = Assembly.GetExecutingAssembly();
+
+	// Extract custom BuildDate from Description
+	var description = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? "";
+	
+
+
 	return Results.Ok(new
 	{
-		Application = "Hello API",
-		Version = "2.0.0",
+		Application = "Hello API",		
 		Environment = app.Environment.EnvironmentName,
 		Machine = Environment.MachineName,
-		Time = DateTime.UtcNow
+		Time = DateTime.UtcNow,
+		Version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+')[0] ?? "unknown",
+		Commit = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+').LastOrDefault() ?? "unknown",
+		Branch = assembly.GetCustomAttribute<AssemblyMetadataAttribute>()?.Value ?? "unknown", // Fallback or hardcoded if local
+		BuildDate = description.StartsWith("BuildDate=") ? description.Split('=')[1] : "Unknown"
 	});
 });
 
