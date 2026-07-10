@@ -52,22 +52,28 @@ app.MapGet("/info", () =>
 {
 	var assembly = Assembly.GetExecutingAssembly();
 
-	// Extract custom BuildDate from Description
-	var description = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? "";
-	
+	var metadataAttributes = assembly.GetCustomAttributes<AssemblyMetadataAttribute>();
 
+	// Extract custom BuildDate from Description
+	var assemlbyAttrs = string.Join(", ", assembly.CustomAttributes);
+
+	foreach (var attr in metadataAttributes)
+	{
+		Console.WriteLine(attr.Value); // RuntimeValue
+	}
 
 	return Results.Ok(new
 	{
-		Application = "Hello API",		
+		Application = "Hello API",
 		Environment = app.Environment.EnvironmentName,
 		Machine = Environment.MachineName,
 		Time = DateTime.UtcNow,
-		Version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+')[0] ?? "unknown",
-		Commit = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+').LastOrDefault() ?? "unknown",
-		Branch = assembly.GetCustomAttribute<AssemblyMetadataAttribute>()?.Value ?? "unknown", // Fallback or hardcoded if local
-		Description = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? "",
-		BuildDate = description.StartsWith("BuildDate=") ? description.Split('=')[1] : "Unknown"
+		Version = metadataAttributes.FirstOrDefault(a => a.Key == "Version")?.Value,
+		SourceRevisionId = metadataAttributes.FirstOrDefault(a => a.Key == "SourceRevisionId")?.Value,
+		RepositoryBranch = metadataAttributes.FirstOrDefault(a => a.Key == "RepositoryBranch")?.Value,
+		BuildDate = metadataAttributes.FirstOrDefault(a => a.Key == "BuildDate")?.Value,
+		Actor = metadataAttributes.FirstOrDefault(a => a.Key == "Actor")?.Value,			
+		Ref = metadataAttributes.FirstOrDefault(a => a.Key == "Ref")?.Value,
 	});
 });
 
