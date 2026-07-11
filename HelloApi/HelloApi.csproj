@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Version>1.0.2</Version>
-	<SourceRevisionId></SourceRevisionId>
-	<RepositoryBranch></RepositoryBranch>
-	<BuildDate></BuildDate>
-	<Actor ></Actor >
-	<Ref></Ref>
+    <TargetFramework>net10.0</TargetFramework> 
     <Nullable>enable</Nullable>
+	  <Version>1.0.2</Version>
+	  <SourceRevisionId></SourceRevisionId>
+	  <RepositoryBranch></RepositoryBranch>
+	  <BuildDate></BuildDate>
+	  <Actor></Actor>
+	  <Ref></Ref>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -20,22 +20,27 @@
 
 	<ItemGroup>
 		<!-- Map your custom MSBuild property to an AssemblyMetadataAttribute -->
-		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute" Condition="'$(RepositoryBranch)' != ''">
-			<_Parameter1>RepositoryBranch</_Parameter1>
-			<_Parameter2>$(RepositoryBranch)</_Parameter2>
+		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+			<_Parameter1>Version</_Parameter1>
+			<_Parameter2>$(Version)</_Parameter2>
 		</AssemblyAttribute>
 		<!-- Map your custom MSBuild property to an AssemblyMetadataAttribute -->
-		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute" Condition="'$(SourceRevisionId)' != ''">
+		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
 			<_Parameter1>SourceRevisionId</_Parameter1>
 			<_Parameter2>$(SourceRevisionId)</_Parameter2>
 		</AssemblyAttribute>
 		<!-- Map your custom MSBuild property to an AssemblyMetadataAttribute -->
-		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute" Condition="'$(BuildDate)' != ''">
+		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+			<_Parameter1>RepositoryBranch</_Parameter1>
+			<_Parameter2>$(RepositoryBranch)</_Parameter2>
+		</AssemblyAttribute>
+		<!-- Map your custom MSBuild property to an AssemblyMetadataAttribute -->
+		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
 			<_Parameter1>BuildDate</_Parameter1>
 			<_Parameter2>$(BuildDate)</_Parameter2>
 		</AssemblyAttribute>
 		<!-- Map your custom MSBuild property to an AssemblyMetadataAttribute -->
-		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute" Condition="'$(Actor)' != ''">
+		<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
 			<_Parameter1>Actor</_Parameter1>
 			<_Parameter2>$(Actor)</_Parameter2>
 		</AssemblyAttribute>
