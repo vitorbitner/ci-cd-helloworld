@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -48,19 +49,18 @@ app.MapGet("/", () =>
 
 app.MapHealthChecks("/health");
 
+
 app.MapGet("/info", () =>
 {
-	var assembly = Assembly.GetExecutingAssembly();
+	// 1. Target the compiled assembly
+	Assembly assembly = typeof(Program).Assembly;
 
 	var metadataAttributes = assembly.GetCustomAttributes<AssemblyMetadataAttribute>();
 
 	// Extract custom BuildDate from Description
 	var assemlbyAttrs = string.Join(", ", assembly.CustomAttributes);
-
-	foreach (var attr in metadataAttributes)
-	{
-		Console.WriteLine(attr.Value); // RuntimeValue
-	}
+	foreach (var attr in metadataAttributes)	
+		Console.WriteLine(attr.Value); // RuntimeValue	
 
 	return Results.Ok(new
 	{
